@@ -13,6 +13,7 @@
   "dependencies": {
     "@faker-js/faker": "^9.0.2",
     "express": "^4.21.0",
+    "handlebars-paginate": "^0.1.0",
     "hbs": "^4.2.0",
     "nodemon": "^3.1.7"
   }

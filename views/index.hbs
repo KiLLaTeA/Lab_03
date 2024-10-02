@@ -12,15 +12,154 @@
 </head>
 <body>
     <div class="container">
-        <nav class="navbar bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg border-bottom border-5 border-gray  mb-5">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                <img src="/images/Logotype.png" alt="Logo" width="100" height="100" class="d-inline-block align-text-center">
-                Bootstrap
+                <a class="navbar-brand" href="/">
+                    <img src="/images/Logotype.png" alt="dog" width="80" height="80">
                 </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <form class="d-flex me-2" role="search" method="get">
+                                <select class="form-select me-2" aria-label="Default select example" name="hello">
+                                    <option selected disabled>Выбор категории</option>
+                                    <option value="1">Рыжие</option>
+                                    <option value="2">Белые</option>
+                                    <option value="3">Бомжи</option>
+                                </select>
+                                <input class="form-control me-2" size="25" type="search" name="search" placeholder="Имя (необязательно)" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Поиск</button>
+                            </form>
+                        </li>
+                    </ul>
+                    <a class="navbar-brand d-flex align-items-center rounded-pill" href="/profile">
+                        <img src="/images/Logotype.png" alt="dog" width="50" height="50">
+                        <p class="mb-0 ms-2">Профиль</p>
+                    </a>
+                </div>
             </div>
         </nav>
-        <h1>Hello</h1>
+        <div class="d-flex justify-content-between flex-wrap mb-2">
+            <div class="card mb-5" style="width: 18rem;">
+                <div class="card-body">
+                    <img src="/images/Logotype.png" class="card-img-top" alt="dog">
+                    <div class="d-flex justify-content-between align-items-end">
+                        <h5 class="card-title">Собака имя</h5>
+                        <h6><span class="badge text-bg-primary">Мальчик</span></h6>
+                        {{!-- <h6><span class="badge text-bg-danger">Девочка</span></h6> --}}
+                    </div>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Лабрадор - 2 года</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="card-link d-flex justify-content-end">Забрать</a>
+                </div>
+            </div>
+            <div class="card mb-5" style="width: 18rem;">
+                <div class="card-body">
+                    <img src="/images/Logotype.png" class="card-img-top" alt="dog">
+                    <div class="d-flex justify-content-between align-items-end">
+                        <h5 class="card-title">Собака имя</h5>
+                        <h6><span class="badge text-bg-danger">Девочка</span></h6>
+                    </div>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Лабрадор - 2 года</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="card-link d-flex justify-content-end">Забрать</a>
+                </div>
+            </div>
+            <div class="card mb-5" style="width: 18rem;">
+                <div class="card-body">
+                    <img src="/images/Logotype.png" class="card-img-top" alt="dog">
+                    <div class="d-flex justify-content-between align-items-end">
+                        <h5 class="card-title">Собака имя</h5>
+                        <h6><span class="badge text-bg-secondary">Мальчик</span></h6>
+                    </div>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Лабрадор - 2 года</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="card-link d-flex justify-content-end">Забрать</a>
+                </div>
+            </div>
+            <div class="card mb-5" style="width: 18rem;">
+                <div class="card-body">
+                    <img src="/images/Logotype.png" class="card-img-top" alt="dog">
+                    <div class="d-flex justify-content-between align-items-end">
+                        <h5 class="card-title">Собака имя</h5>
+                        <h6><span class="badge text-bg-secondary">Мальчик</span></h6>
+                    </div>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Лабрадор - 2 года</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="card-link d-flex justify-content-end">Забрать</a>
+                </div>
+            </div>
+            <div class="card mb-5" style="width: 18rem;">
+                <div class="card-body">
+                    <img src="/images/Logotype.png" class="card-img-top" alt="dog">
+                    <div class="d-flex justify-content-between align-items-end">
+                        <h5 class="card-title">Собака имя</h5>
+                        <h6><span class="badge text-bg-secondary">Мальчик</span></h6>
+                    </div>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Лабрадор - 2 года</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="card-link d-flex justify-content-end">Забрать</a>
+                </div>
+            </div>
+            <div class="card mb-5" style="width: 18rem;">
+                <div class="card-body">
+                    <img src="/images/Logotype.png" class="card-img-top" alt="dog">
+                    <div class="d-flex justify-content-between align-items-end">
+                        <h5 class="card-title">Собака имя</h5>
+                        <h6><span class="badge text-bg-secondary">Мальчик</span></h6>
+                    </div>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Лабрадор - 2 года</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="card-link d-flex justify-content-end">Забрать</a>
+                </div>
+            </div>
+            <div class="card mb-5" style="width: 18rem;">
+                <div class="card-body">
+                    <img src="/images/Logotype.png" class="card-img-top" alt="dog">
+                    <div class="d-flex justify-content-between align-items-end">
+                        <h5 class="card-title">Собака имя</h5>
+                        <h6><span class="badge text-bg-secondary">Мальчик</span></h6>
+                    </div>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Лабрадор - 2 года</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="card-link d-flex justify-content-end">Забрать</a>
+                </div>
+            </div>
+            <div class="card mb-5" style="width: 18rem;">
+                <div class="card-body">
+                    <img src="/images/Logotype.png" class="card-img-top" alt="dog">
+                    <div class="d-flex justify-content-between align-items-end">
+                        <h5 class="card-title">Собака имя</h5>
+                        <h6><span class="badge text-bg-secondary">Мальчик</span></h6>
+                    </div>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Лабрадор - 2 года</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="card-link d-flex justify-content-end">Забрать</a>
+                </div>
+            </div>
+        </div>
+        <nav class="d-flex w-100 justify-content-center pagination pagination-centered">
+            <ul class="pagination justify-content-center">
+                {{#paginate pagination type="first"}}
+                <li class="page-item {{#if disabled}}disabled{{/if}}"><a class="page-link" href="?p={{n}}">Начало</a></li>
+                {{/paginate}}
+                {{#paginate pagination type="previous"}}
+                <li class="page-item {{#if disabled}}disabled{{/if}}"><a class="page-link" href="?p={{n}}">Прошлая</a></li>
+                {{/paginate}}
+                {{#paginate pagination type="middle" limit="5"}}
+                <li class="page-item {{#if active}}active{{/if}}"><a class="page-link" href="?p={{n}}">{{n}}</a></li>
+                {{/paginate}}
+                {{#paginate pagination type="next"}}
+                <li class="page-item {{#if disabled}}disabled{{/if}}"><a class="page-link" href="?p={{n}}">Следующая</a></li>
+                {{/paginate}}
+                {{#paginate pagination type="last"}}
+                <li class="page-item {{#if disabled}}disabled{{/if}}"><a class="page-link" href="?p={{n}}">Конец</a></li>
+                {{/paginate}}
+            </ul>
+        </nav>
     </div>
 
 
