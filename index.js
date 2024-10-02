@@ -15,6 +15,15 @@ app.set(`view engine`, `hbs`);
 
 var paginate = require('handlebars-paginate');
 hbs.registerHelper('paginate', paginate);
+// hbs.registerHelper('IntMod', (v1, v2) => v1 % v2 == 0); - скорее всего не пригодится
+
+// const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+// console.log(animals.slice(2));
+// // Expected output: Array ["camel", "duck", "elephant"]
+
+// console.log(animals.slice(2, 4));
+// // Expected output: Array ["camel", "duck"]
 
 app.get(`/`, (req, res)=>{
     let page = "";
@@ -24,6 +33,14 @@ app.get(`/`, (req, res)=>{
     else{
         page = req.query.p;
     }
+
+    startEntry = page*16-16;
+    endEntry = page*16-1;
+    // if(endEntry > index){
+    //     endEntry = index;
+    // }
+
+    console.log(Math.ceil(178/16));
 
     res.render(`index`, {
         pagination: {
