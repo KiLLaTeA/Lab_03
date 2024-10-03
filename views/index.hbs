@@ -12,12 +12,6 @@
 </head>
 <body>
     <div class="container">
-        {{!-- {{#if (IntMod 2 2)}}
-            <h2>Получилось!</h2>
-        {{else}}
-            <h2>НЕТ!</h2>
-        {{/if}} 
-        скорее всего тоже не пригодится--}}
         <nav class="navbar navbar-expand-lg border-bottom border-5 border-gray  mb-5">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">
@@ -29,14 +23,13 @@
                 <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <form class="d-flex me-2" role="search" method="get">
-                                <select class="form-select me-2" aria-label="Default select example" name="hello">
-                                    <option selected disabled>Выбор категории</option>
-                                    <option value="1">Рыжие</option>
-                                    <option value="2">Белые</option>
-                                    <option value="3">Бомжи</option>
+                            <form class="d-flex me-2" role="search" method="get" action="/sorting">
+                                <select class="form-select me-2" aria-label="Default select example" name="sex">
+                                    <option selected disabled>Отбор по полу</option>
+                                    <option value="male">Мальчик</option>
+                                    <option value="female">Девочка</option>
                                 </select>
-                                <input class="form-control me-2" size="25" type="search" name="search" placeholder="Имя (необязательно)" aria-label="Search">
+                                <input class="form-control me-2" size="25" type="search" name="nick" placeholder="Имя (необязательно)" aria-label="Search">
                                 <button class="btn btn-outline-success" type="submit">Поиск</button>
                             </form>
                         </li>
@@ -50,12 +43,12 @@
         </nav>
         <div class="d-flex justify-content-between flex-wrap mb-2">
             {{#each dogs}}
-            <div class="card mb-5" style="width: 18rem;">
+            <form class="card mb-5" method="post" style="width: 18rem;">
                 <div class="card-body">
                     <img src="{{this.img}}" class="card-img-top" alt="dog">
                     <div class="d-flex justify-content-between align-items-end">
                         <h5 class="card-title">{{this.nick}}</h5>
-                        {{#if (EqualSex this.sex "male")}}
+                        {{#if (EqualTerms this.sex "male")}}
                             <h6><span class="badge text-bg-primary">{{this.sex}}</span></h6>
                         {{else}}
                             <h6><span class="badge text-bg-danger">{{this.sex}}</span></h6>
@@ -63,30 +56,25 @@
                     </div>
                     <h6 class="card-subtitle mb-2 text-body-secondary">{{this.breed}} - {{this.age}} y.o.</h6>
                     <p class="card-text">{{this.desc}}</p>
-                    <a href="#" class="card-link d-flex justify-content-end">Забрать</a>
+                    {{#if (EqualTerms this.isHome true)}}
+                        {{#if (EqualTerms this.isAdmin true)}}
+                        <a class="card-link d-flex justify-content-end">Уже в своём доме</a>
+                        {{/if}}
+                    {{/if}}
+                    {{#if (EqualTerms this.isHome false)}}
+                        {{#if (EqualTerms this.isAdmin true)}}
+                        <a class="card-link d-flex justify-content-end">На рассмотрении</a>
+                        {{/if}}
+                    {{/if}}
+                    {{#if (EqualTerms this.isHome false)}}
+                        {{#if (EqualTerms this.isAdmin false)}}
+                        <button class="btn btn-outline-success" type="submit" value="{{this._id}}" name="notHome">Забрать</button>
+                        {{/if}}
+                    {{/if}}                    
                 </div>
-            </div>
+            </form>
             {{/each}}
         </div>
-        <nav class="d-flex w-100 justify-content-center pagination pagination-centered">
-            <ul class="pagination justify-content-center">
-                {{#paginate pagination type="first"}}
-                <li class="page-item {{#if disabled}}disabled{{/if}}"><a class="page-link" href="?p={{n}}">Начало</a></li>
-                {{/paginate}}
-                {{#paginate pagination type="previous"}}
-                <li class="page-item {{#if disabled}}disabled{{/if}}"><a class="page-link" href="?p={{n}}">Прошлая</a></li>
-                {{/paginate}}
-                {{#paginate pagination type="middle" limit="5"}}
-                <li class="page-item {{#if active}}active{{/if}}"><a class="page-link" href="?p={{n}}">{{n}}</a></li>
-                {{/paginate}}
-                {{#paginate pagination type="next"}}
-                <li class="page-item {{#if disabled}}disabled{{/if}}"><a class="page-link" href="?p={{n}}">Следующая</a></li>
-                {{/paginate}}
-                {{#paginate pagination type="last"}}
-                <li class="page-item {{#if disabled}}disabled{{/if}}"><a class="page-link" href="?p={{n}}">Конец</a></li>
-                {{/paginate}}
-            </ul>
-        </nav>
     </div>
 
 
