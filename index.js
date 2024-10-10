@@ -13,9 +13,7 @@ let hbs = require(`hbs`);
 app.set(`views`, `views`);
 app.set(`view engine`, `hbs`);
 
-var paginate = require('handlebars-paginate');
 const { faker, id_ID } = require('@faker-js/faker');
-hbs.registerHelper('paginate', paginate);
 
 hbs.registerHelper('EqualTerms', (v1, v2) => v1 == v2);
 hbs.registerHelper('EqualTermsNot', (v1, v2) => v1 != v2);
